@@ -30,10 +30,12 @@ def create_game():
     away_team_id = request.form["away"]
     away_team = team_repo.select(away_team_id)
     # print(away_team)
-    result = request.form["result"]
+    home_goals = request.form["home_goals"]
+    away_goals = request.form["away_goals"]
+
     date = request.form["date"]
 
-    new_game = Games(home_team.id, away_team.id, result, date, id = None)
+    new_game = Games(home_team.id, away_team.id, home_goals, away_goals, date, id = None)
 
     # print(new_game)
 
@@ -59,10 +61,12 @@ def update_game(id):
     away_team_id = request.form["away"]
     # away_team = team_repo.select(id)
  
-    result = request.form["result"]
+    home_goals = request.form["home_goals"]
+    away_goals = request.form["away_goals"]
+
     date = request.form["date"]
 
-    games = Games(home_team_id, away_team_id, result, date, id)
+    games = Games(home_team_id, away_team_id, home_goals, away_goals, date, id)
 
     game_repo.update(games)
     return redirect("/games")

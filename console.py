@@ -14,5 +14,5 @@ teams_repo.save(team1)
 team2 = Teams(3, "Chelsea", 3, 7)
 teams_repo.save(team2)
 
-game = Games(team1.id, team2.id, "Draw", "12/12/2022")
+game = Games(team1.id, team2.id, 1, 0, "12/12/2022")
 games_repo.save(game)

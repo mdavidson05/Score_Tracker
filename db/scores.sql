@@ -16,7 +16,8 @@ CREATE TABLE games (
     id SERIAL PRIMARY KEY,
     home_team int REFERENCES teams(id) ON DELETE CASCADE,
     away_team int REFERENCES teams(id) ON DELETE CASCADE,
-    result VARCHAR(100),
+    home_goals INT,
+    away_goals INT,
     date DATE
     
 );

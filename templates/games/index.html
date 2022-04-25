@@ -8,7 +8,11 @@
 <h3> {{game.home.team}} vs {{game.away.team}}</h3>
 
 <section>
-    <p>{{ game.home.team }} vs {{ game.away.team }} {{ game.result }} {{ game.date }}</p>
+    <p>{{ game.home.team }} vs {{ game.away.team }} {{ game.home_goals }} - {{game.away_goals}} {{ game.date }}</p>
+    <p>{% if game.home_goals > game.away_goals%}
+        {{game.home.team}} beat {{game.away.team}} by {{game.home_goals}} goals to {{game.away_goals}} goals
+        {% endif %}
+    </p>
 
     <a href="/games/{{ game.id }}/edit"> Edit </a>
 
