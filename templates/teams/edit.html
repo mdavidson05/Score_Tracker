@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update a Team</h2>
+
+
+<form action="/teams/{{ team.id }}" method="POST">
+    <div>
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" 
+        value="{{ team.position }}">
+    </div>
+
+    <div>
+        <label for="team">Team:</label>
+        <input type="text" id="team" name="team" 
+        value="{{ team.team }}">
+            
+        
+    </div>
+    <div>
+        <label for="games_played">Games Played:</label>
+        <input type="text" id="games_played" name="games_played" value="{{ team.games_played }}">
+        
+    </div>
+    <div>
+        <label for="points">Points:</label>
+        <input type="text" id="points" name="points" value="{{ team.points }}">       
+    </div>
+    <input type="submit">
+</form>
+
+
+{% endblock %}
+

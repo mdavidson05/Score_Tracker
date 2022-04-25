@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Games</h2>
+
+{% for game in games %}
+
+<h3> {{game.home.team}} vs {{game.away.team}}</h3>
+
+<section>
+    <p>{{ game.home.team }} vs {{ game.away.team }} {{ game.result }} {{ game.date }}</p>
+
+    <a href="/games/{{ game.id }}/edit"> Edit </a>
+
+    <form action="/games/{{ game.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+
+    
+</section>
+
+{% endfor %}
+{% endblock %}
