@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>League Table</h2>
+
+{% for team in league %}
+
+
+<section>
+    <p>{{ team.position }} {{ team.team }} {{ team.games_played }} {{ team.points }}
+    </p>
+
+</section>
+
+{% endfor %}
+{% endblock %}
+
+

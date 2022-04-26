@@ -1,4 +1,4 @@
-
+DROP TABLE IF EXISTS league;
 DROP TABLE IF EXISTS games;
 DROP TABLE IF EXISTS teams;
 
@@ -8,9 +8,7 @@ CREATE TABLE teams (
     team VARCHAR(100),
     games_played INT,
     points INT
-    
-   
-);
+    );
 
 CREATE TABLE games (
     id SERIAL PRIMARY KEY,
@@ -22,7 +20,27 @@ CREATE TABLE games (
     
 );
 
+CREATE TABLE league (
+    id SERIAL PRIMARY KEY,
+    position INT,
+    team VARCHAR(100),
+    -- goals for,
+    -- goals against,
+    -- won
+    --lost
+    -- drawn
+    --goal difference
+    games_played INT,
+    points INT
+
+)
+
+-- CREATE TABLE players
+-- sql = "SELECT * FROM customers ORDER BY name"
+
+-- SIMULATE MATCHES
+
 -- teams to games inner join table with game team id
 
 -- each team will belong to a club make a club table
- -- club id
+-- club id
