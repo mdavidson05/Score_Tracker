@@ -11,16 +11,16 @@ teams_repo.delete_all()
 games_repo.delete_all()
 league_repo.delete_all()
 
-team1 = Teams(2,'Man C', 3, 7)
+team1 = Teams('Man C', 3, 7)
 teams_repo.save(team1)
 
-team2 = Teams(3, "Chelsea", 3, 7)
+team2 = Teams("Chelsea", 3, 7)
 teams_repo.save(team2)
 
-team3 = Teams(1, 'Arsenal', 3, 9)
+team3 = Teams("Arsenal", 3, 9)
 teams_repo.save(team3)
 
-team4 = Teams(4, 'Man U', 3, 6)
+team4 = Teams('Man U', 3, 6)
 teams_repo.save(team4)
 
 game = Games(team1.id, team2.id, 1, 0, "12/12/2022")
@@ -29,16 +29,21 @@ games_repo.save(game)
 game2 = Games(team3.id, team4.id, 3, 9, "12/12/2022")
 games_repo.save(game2)
 
-league1 = League(team1.position, team1.team, team1.games_played, team1.points)
+
+#for league in leagues
+#order = league.points
+
+league1 = League(1, team1.team, team1.games_played, team1.points)
 league_repo.save(league1)
 
-league2 = League(team2.position, team2.team, team2.games_played, team2.points)
+league2 = League(2, team2.team, team2.games_played, team2.points)
 league_repo.save(league2)
 
-league3 = League(team3.position, team3.team, team3.games_played, team3.points)
+league3 = League(3, team3.team, team3.games_played, team3.points)
 league_repo.save(league3)
 
-league4 = League(team4.position, team4.team, team4.games_played, team4.points)
+league4 = League(4, team4.team, team4.games_played, team4.points)
 league_repo.save(league4)
 
-league_repo.order()
+league_repo.positions()
+#IF ALL ELSE FAILS JUST NUKE IT FROM ORBIT/ ORDER BY POINTS

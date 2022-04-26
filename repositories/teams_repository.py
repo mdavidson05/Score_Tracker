@@ -4,8 +4,8 @@ import repositories.teams_repository as teams_repo
 
 
 def save(team):
-    sql = "INSERT INTO teams (position, team, games_played, points) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [team.position, team.team, team.games_played, team.points]
+    sql = "INSERT INTO teams (team, games_played, points) VALUES (%s, %s, %s) RETURNING id"
+    values = [team.team, team.games_played, team.points]
     results = run_sql(sql, values)
     id = results[0]['id']
     team.id = id
@@ -16,7 +16,7 @@ def select_all():
     sql = "SELECT * FROM teams"
     results = run_sql(sql)
     for result in results:
-        team_select = Teams(result["position"], result["team"], result["games_played"], result["points"], result["id"])
+        team_select = Teams(result["team"], result["games_played"], result["points"], result["id"])
         teams.append(team_select)
     return teams
 
@@ -25,7 +25,7 @@ def select(id):
     sql = "SELECT * FROM teams WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    team = Teams(result["position"], result["team"], result["games_played"], result["points"], result["id"])
+    team = Teams(result["team"], result["games_played"], result["points"], result["id"])
     return team
 
 
@@ -41,11 +41,10 @@ def delete(id):
 
 
 def update(team):
-    sql = "UPDATE teams SET (position, team, games_played, points) = (%s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE teams SET (team, games_played, points) = (%s, %s, %s) WHERE id = %s"
     # print(team)
 
-    values = [team.position, team.team, team.games_played, team.points, team.id]
-
+    values = [team.team, team.games_played, team.points, team.id]
 
     run_sql(sql, values)
     

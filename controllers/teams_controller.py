@@ -2,7 +2,7 @@ from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.teams import Teams
 import repositories.teams_repository as teams_repo
-
+import repositories.league_repository as league_repo
 teams_bluprint = Blueprint("teams", __name__)
 
 # INDEX
@@ -22,14 +22,13 @@ def new_team():
 # CREATE
 @teams_bluprint.route("/teams", methods=["POST"])
 def create_team():
-    position = request.form["position"]
     team = request.form["team"]
     games_played = request.form["games_played"]
     points = request.form["points"]
 
     
-    new_team = Teams(position, team, games_played, points, id =None)
-
+    new_team = Teams(team, games_played, points, id =None)
+    league_repo.save(new_team)
     teams_repo.save(new_team)
     return redirect("/teams")
 
@@ -38,21 +37,21 @@ def create_team():
 @teams_bluprint.route("/teams/<id>/edit")
 def edit_team(id):
     team = teams_repo.select(id)
-    print(team)
+    # print(team)
     return render_template('teams/edit.html', team=team)
 
 
 # UPDATE
 @teams_bluprint.route("/teams/<id>", methods=["POST"]) #id is being passed as a LIST
 def update_team(id):
-    position = request.form["position"]
     team = request.form["team"]
     games_played = request.form["games_played"]
     points = request.form["points"]
 
 
-    teams = Teams(position, team, games_played, points, id)
-    
+    teams = Teams(team, games_played, points, id)
+
+    league_repo.update(teams)
     teams_repo.update(teams)
     return redirect("/teams")
 

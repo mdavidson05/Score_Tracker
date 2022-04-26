@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS teams;
 
 CREATE TABLE teams (
     id SERIAL PRIMARY KEY,
-    position INT,
+    -- position INT,
     team VARCHAR(100),
     games_played INT,
     points INT

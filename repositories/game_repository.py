@@ -8,7 +8,7 @@ def save(game):
     sql = "INSERT INTO games (home_team, away_team, home_goals, away_goals, date) VALUES (%s, %s, %s, %s, %s) RETURNING id"
     values = [game.home, game.away, game.home_goals, game.away_goals, game.date]
     results = run_sql(sql, values)
-    print(results)
+    # print(results)
     id = results[0]['id']
     game.id = id
 

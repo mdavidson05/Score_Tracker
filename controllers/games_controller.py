@@ -3,6 +3,7 @@ from flask import Blueprint, Flask, redirect, render_template, request
 from models.games import Games
 import repositories.game_repository as game_repo
 import repositories.teams_repository as team_repo
+import repositories.league_repository as league_repo
 
 games_blueprint = Blueprint("games", __name__)
 
@@ -38,7 +39,7 @@ def create_game():
     new_game = Games(home_team.id, away_team.id, home_goals, away_goals, date, id = None)
 
     # print(new_game)
-
+    # league_repo.save(new_game)
     game_repo.save(new_game)
     return redirect("/games")
 
