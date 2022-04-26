@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS players;
 DROP TABLE IF EXISTS league;
 DROP TABLE IF EXISTS games;
 DROP TABLE IF EXISTS teams;
@@ -32,6 +33,20 @@ CREATE TABLE league (
     --goal difference
     games_played INT,
     points INT
+
+);
+
+CREATE TABLE players (
+    id serial PRIMARY KEY,
+    name VARCHAR(100),
+    appearances int,
+    goals int,
+    assists int,
+    yellow_cards int,
+    red_cards int,
+    MoM int,
+    team INT REFERENCES teams(id) ON DELETE CASCADE
+
 
 )
 

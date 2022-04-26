@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Player Table</h2>
+
+{% for player in players %}
+
+
+<section>
+    <p>
+    {{player.name}} {{player.appearances}} {{player.goals}} {{player.assist}} {{player.yellow_cards}} {{player.red_cards}} {{player.MoM}}
+</p>
+</section>
+
+{% endfor %}
+{% endblock %}
+
+

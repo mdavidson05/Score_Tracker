@@ -2,14 +2,17 @@ import pdb
 from models.games import Games
 from models.teams import Teams
 from models.league import League
+from models.players import Players
 
 import repositories.game_repository as games_repo
 import repositories.teams_repository as teams_repo
 import repositories.league_repository as league_repo
+import repositories.players_repository as player_repo
 
 teams_repo.delete_all()
 games_repo.delete_all()
 league_repo.delete_all()
+player_repo.delete_all()
 
 team1 = Teams('Man C', 3, 7)
 teams_repo.save(team1)
@@ -46,4 +49,15 @@ league4 = League(4, team4.team, team4.games_played, team4.points)
 league_repo.save(league4)
 
 league_repo.positions()
-#IF ALL ELSE FAILS JUST NUKE IT FROM ORBIT/ ORDER BY POINTS
+
+player1 = Players("Ronaldo", 3, 6, 3, 3, 0, 2)
+player_repo.save(player1)
+
+player2 = Players("Xhaka", 2, 2, 0, 0, 2, 0)
+player_repo.save(player2)
+
+player3 = Players("Azpilicueta", 3, 0, 1, 1, 0, 0)
+player_repo.save(player3)
+
+player4 = Players("De Bruyne", 3, 6, 3, 3, 0, 2)
+player_repo.save(player4)
