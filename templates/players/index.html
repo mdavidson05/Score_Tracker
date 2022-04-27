@@ -3,16 +3,39 @@
 
 <h2>Player Table</h2>
 
-{% for player in players %}
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Apperances</th>
+        <th>Goals</th>
+        <th>Assists</th>
+        <th>Yellow Cards</th>
+        <th>Red Cards</th>
+        <th>MoM</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+        {% for player in players %}
+      <tr>
+        
+        <td>{{player.name}}</td>
+        <td>{{ player.appearances}} </td>
+        <td>{{ player.goals  }}</td>
+        <td>{{ player.assist }}</td>
+        <td>{{ player.yellow_cards  }}</td>
+        <td>{{ player.red_cards }}</td>
+        <td>{{ player.MoM }}</td>
+       
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
 
 
-<section>
-    <p>
-    {{player.name}} {{player.appearances}} {{player.goals}} {{player.assist}} {{player.yellow_cards}} {{player.red_cards}} {{player.MoM}}
-</p>
 </section>
 
-{% endfor %}
 {% endblock %}
 
 

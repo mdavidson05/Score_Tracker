@@ -3,25 +3,46 @@
 
 <h2>Games</h2>
 
-{% for game in games %}
 
-<h3> {{game.home.team}} vs {{game.away.team}}</h3>
 
-<section>
-    <p>{{ game.home.team }} vs {{ game.away.team }} {{ game.home_goals }} - {{game.away_goals}} {{ game.date }}</p>
-    <p>{% if game.home_goals > game.away_goals%}
-        {{game.home.team}} beat {{game.away.team}} by {{game.home_goals}} goals to {{game.away_goals}} goals
-        {% endif %}
-    </p>
+<table>
+    <thead>
+      <tr>
+        
+        <th>Home Team</th>
+        <th>Away Team</th>
+        <th>Home Team Goals</th>
+        <th>Away Team Goals</th>
+        <th>Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
 
-    <a href="/games/{{ game.id }}/edit"> Edit </a>
-
-    <form action="/games/{{ game.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-
+      </tr>
+    </thead>
     
-</section>
+    <tbody>
+        {% for game in games %}
+      <tr>
 
-{% endfor %}
+        <td>{{ game.home.team  }} </td>
+        <td>{{ game.away.team  }}</td>
+        <td>{{ game.home_goals }}</td>
+        <td>{{ game.away_goals }}</td>
+        <td>{{ game.date }}</td>
+        <td>
+          
+          <a href="/games/{{ game.id }}/edit">Edit</a>
+        </td>
+          <td>
+
+            <form action="/games/{{ game.id }}/delete" method="POST">
+                <input type="submit" value="Delete">
+            </form></td>
+       
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+
 {% endblock %}

@@ -1,0 +1,150 @@
+body{
+    font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+  }
+  /* . means its a classs (specify in html # is an id) */
+    header2 {
+    border: 1px solid #ccc;
+    min-height: 68px;
+    padding: 10px;
+    display: flex;
+    line-height: 18px;
+    margin-bottom: 10px;
+    background-color: cornflowerblue;
+  }
+
+  table > thead > tr {
+      background-color: rgb(199, 199, 199);
+  }
+
+
+  .premier_league {
+    width: 50%;
+    /* margin: auto; */
+    border-radius: 5px;
+  }
+
+  .premier_league img{
+    width: 100%;
+    border-radius: 5px;
+  }
+  table {
+    
+    border-collapse: collapse;
+    text-align: center;
+	vertical-align: middle;
+    width: 100%;
+    column-width: 25%;
+  }
+  
+    td, th {
+        border: 0.00001px solid #999; 
+      }
+  
+  .grid-container {
+    display: inline-grid;
+    grid-template-columns: 
+    50% 50%;
+    /* grid-auto-rows: 25%; */
+    /* background-color: #2196F3; */
+    /* padding: 10px; */
+  }
+  
+  .grid-item {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    padding: 20px;
+    font-size: 15px;
+    text-align: center;
+    height: 20%
+  }
+
+  .grid-item > div {
+    object-fit: cover;
+    width: 75%;
+    max-height: 80%;
+  }
+  .container{
+    display: grid;
+    flex-wrap: wrap;
+    width: auto;
+    margin: 0 auto;
+    height: 80%;
+  }
+  /* Navbar container */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+    width: auto;
+    text-align: right;
+    
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0; 
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  footer {
+      background-color: rgb(100, 99, 99);
+      width: 100%;
+      margin: 30px 
+      
+  }

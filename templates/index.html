@@ -1,4 +1,76 @@
 {% extends "base.html" %}
 {% block content %}
+<div class = "grid-container">
+<div>    
+    <div class = "grid-item">
+        <div class="premier_league">
+            <a href = /games>
+            <img class="premier_league" src="{{ url_for('static', filename='/game.jpeg') }}" alt="" height="250px">
+        </a>
+        </div>
+    </div>
+    <div class = "grid-item">
+        <div class="premier_league">
+            <a href = /teams>
+            <img class="premier_league" src="{{ url_for('static', filename='/teams_photo.jpeg') }}" alt="" height="250px">
+        </a>
+        </div>
+    </div>
+
+    <div class = "grid-item">
+        <div class="premier_league">
+            <a href = /league>
+            <img class="premier_league" src="{{ url_for('static', filename='//premier_league_trophy.webp') }}" alt="" height="250px">
+            </a>
+        </div>
+    </div>    
+
+        <div class = "grid-item">
+            <div class="premier_league">
+                <a href = /players>
+                <img class="premier_league" src="{{ url_for('static', filename='/players.png') }}" alt="" height="250px">
+                </a>
+            </div>
+        </div>    
+
+</div>  
+
+<nav>
+    <div class = "grid-item">
+            Games
+            <ul>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </ul>
+        </div>
+          
+        <div class = "grid-item">
+            Teams
+            <ul>
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </ul>
+        </div>
+
+       
+
+        <div class = "grid-item">
+            League
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+
+        
+        
+        <div class = "grid-item">
+            Players
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        </div>
+
+</nav>
+
 
 {% endblock %}
+{% block footer %}
+{%endblock%}

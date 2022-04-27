@@ -3,16 +3,36 @@
 
 <h2>League Table</h2>
 
-{% for team in league %}
 
 
-<section>
-    <p>{{team.position}} {{ team.team }} {{ team.games_played }} {{ team.points }}
-    </p>
+<table>
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Team</th>
+        <th>Games Played</th>
+        <th>Points</th>
 
-</section>
+      </tr>
+    </thead>
+    
+    <tbody>
+        {% for team in league %}
+      <tr>
+        
+        <td>{{team.position}}</td>
+        <td>{{ team.team }} </td>
+        <td>{{ team.games_played }}</td>
+        <td>{{ team.games_played }}</td>
+       
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
 
-{% endfor %}
+
+
+
 {% endblock %}
 
 

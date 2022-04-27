@@ -1,12 +1,15 @@
 {% extends "base.html" %}
-{% block content %}
 
-<h2>Add a New Game</h2>
+
+
+{% block content %}
 
 
 
 <form action="/games" method="POST">
+    <div><h2>Add a New Game</h2></div>
     <div>
+    <!-- <div class="form-container"> -->
         <label for="home">Home Team:</label>
         <select id="home" name="home">
             {% for team in teams %}
