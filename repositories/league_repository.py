@@ -34,9 +34,6 @@ def order():
 
 def update(team):
     sql = "UPDATE league SET (position, team, games_played, points) = (%s, %s, %s, %s) WHERE id = %s"
-    # print(team)
-
-    # update_position(team) 
 
     values = [team.team, team.games_played, team.points, team.id]
 
@@ -64,15 +61,5 @@ def positions():
 
 
 
-# def update_position(team):
-#     teams = teams_repo.select_all()
-#     positions = []
-#     for position in teams:
-#         teams += position.points
-    
-    
-    #for each object in teams find points
-    #if  team1.points > team2.points
-    #update team1 & team2 position
 
     

@@ -53,13 +53,3 @@ def update(game):
     # print(values)
     run_sql(sql, values)
 
-
-# def select_victims_of_zombie(id):
-#     victims = []
-#     sql = "SELECT humans.* FROM humans INNER JOIN bitings ON bitings.human_id = humans.id WHERE bitings.zombie_id = %s"
-#     values = [id]
-#     results = run_sql(sql, values)
-#     for result in results:
-#         human = Human(result["name"])
-#         victims.append(human)
-#     return victims
